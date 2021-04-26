@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataTemplateSelectorSample"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+             x:Class="DataTemplateSelectorSample.MainPage">
+
+    <ContentPage.Resources>
+       
+        <!--Create a different templates-->         
+        <ResourceDictionary>
+            <DataTemplate x:Key="DefaultTemplate">
+                <Grid>
+                <Image Source="{Binding Image}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="SpecificTemplate">
+                <Grid>
+                <Label Text="Not Available" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Italic" FontFamily="Calbiri"/>
+                <Image Source="{Binding Image}" Opacity="0.5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <syncfusion:SfRotator Grid.Row="0" x:Name="sfRotator"  SelectedIndex="2"                  
+                    ItemsSource="{Binding ImageCollection}"              
+                    NavigationDirection="Horizontal"
+                    NavigationStripMode="Thumbnail" 
+                    BackgroundColor="White" 
+                    NavigationStripPosition="Bottom">
+                <syncfusion:SfRotator.ItemTemplate>
+                    <local:DataTemplateViewModel DefaultTemplate="{StaticResource DefaultTemplate}" SpecificTemplate="{StaticResource SpecificTemplate}"/>
+                </syncfusion:SfRotator.ItemTemplate>
+            </syncfusion:SfRotator>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
