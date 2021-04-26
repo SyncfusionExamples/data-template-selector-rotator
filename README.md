@@ -1,2 +1,2 @@
 # data-template-selector-rotator
-DataTemplate selector for rotator sample
+DataTemplate selector sample for rotator 
