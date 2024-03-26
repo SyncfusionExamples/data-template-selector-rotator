@@ -6,7 +6,7 @@ For know more details about Rotator: https://www.syncfusion.com/xamarin-ui-contr
 
 Rotator user guide documentation: https://help.syncfusion.com/xamarin/rotator/getting-started
 
-# DataTemplateSelector in Xamarin Rotator (SfRotator)
+## DataTemplateSelector in Xamarin Rotator (SfRotator)
 SfRotator supports DataTemplateSelector which you can choose a DataTemplate based on the data object.
 
 **[XAML]**
